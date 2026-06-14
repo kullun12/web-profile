@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
 
-                <form action="{{ $model->id ? url('/pelamar/update/' . $model->id) : url('/pelamar/simpan') }}"
+                <form action="{{ $model->id ? url('/component/update/' . $model->id) : url('/component/simpan') }}"
                     method="POST">
                     @csrf
 

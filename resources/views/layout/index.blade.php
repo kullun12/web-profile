@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/select2-bootstrap-5-theme.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap-icons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/font-awesome/all.min.css') }}">
     <link href="{{ asset('assets/vendor/select2/select2.min.css') }}" rel="stylesheet" />
 
