@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,41 +9,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/select2-bootstrap-5-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/font-awesome/all.min.css') }}">
+    <link href="{{ asset('assets/vendor/select2/select2.min.css') }}" rel="stylesheet" />
 
     <style>
         /* Global Styles */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Warna background abu-abu kebiruan muda */
+            background-color: #f8fafc;
+            /* Warna background abu-abu kebiruan muda */
             color: #334155;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Memastikan body selalu setinggi layar penuh */
+            min-height: 100vh;
+            /* Memastikan body selalu setinggi layar penuh */
         }
 
         html {
-            scroll-behavior: smooth; /* Efek scroll halus saat klik menu navbar */
+            scroll-behavior: smooth;
+            /* Efek scroll halus saat klik menu navbar */
         }
 
         /* Glassmorphism Navbar */
         .navbar-custom {
-            background: rgba(15, 23, 42, 0.95) !important; /* Warna dark blue elegan */
-            backdrop-filter: blur(10px); /* Efek kaca/blur di belakang navbar */
+            background: rgba(15, 23, 42, 0.95) !important;
+            /* Warna dark blue elegan */
+            backdrop-filter: blur(10px);
+            /* Efek kaca/blur di belakang navbar */
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease-in-out;
         }
-        
+
         .navbar-brand {
             font-weight: 700;
             letter-spacing: 0.5px;
         }
 
         .navbar-brand span {
-            color: #3b82f6; /* Aksen titik warna biru primary */
+            color: #3b82f6;
+            /* Aksen titik warna biru primary */
         }
 
         .nav-link {
@@ -59,7 +68,8 @@
 
         /* Main Content Wrapper */
         main {
-            flex: 1; /* Mendorong footer otomatis selalu ke paling bawah */
+            flex: 1;
+            /* Mendorong footer otomatis selalu ke paling bawah */
         }
 
         /* Modern Footer */
@@ -82,36 +92,43 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #f1f5f9; 
+            background: #f1f5f9;
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
+            background: #cbd5e1;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
+            background: #94a3b8;
         }
     </style>
+    @yield('js')
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-3 shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">TechDev<span>.</span></a>
-            
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#beranda">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#layanan">Layanan</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#review">Ulasan Klien</a></li>
-                    
+
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
-                        <a class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm" href="{{ url('/') }}#kontak">
+                        <a class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm"
+                            href="{{ url('/') }}#kontak">
                             Hubungi Kami
                         </a>
                     </li>
@@ -122,6 +139,7 @@
 
     <main>
         @yield('content')
+        @yield('modal')
     </main>
 
     <footer class="footer-custom py-5 mt-auto">
@@ -134,8 +152,10 @@
                 <div class="col-md-6 text-center text-md-end">
                     <div class="d-inline-flex gap-3">
                         <a href="#" class="footer-icon text-decoration-none"><i class="bi bi-github fs-5"></i></a>
-                        <a href="#" class="footer-icon text-decoration-none"><i class="bi bi-linkedin fs-5"></i></a>
-                        <a href="#" class="footer-icon text-decoration-none"><i class="bi bi-envelope-fill fs-5"></i></a>
+                        <a href="#" class="footer-icon text-decoration-none"><i
+                                class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#" class="footer-icon text-decoration-none"><i
+                                class="bi bi-envelope-fill fs-5"></i></a>
                     </div>
                 </div>
             </div>
@@ -145,7 +165,12 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/font-awesome/all.min.js') }}"></script>
+    @yield('js')
+    @stack('scripts')
 </body>
+
 </html>
