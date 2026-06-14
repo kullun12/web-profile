@@ -58,7 +58,7 @@ class ExampleComponentController extends Controller
     public function edit($id)
     {
         $model = Pelamar::findOrFail($id);
-        return view('components.example.index', compact('model'));
+        return view('components.example.form', compact('model'));
     }
 
     // ==========================================
